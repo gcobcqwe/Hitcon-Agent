@@ -1,0 +1,8 @@
+# Web
+webHost: "127.0.0.1"
+webPort: 5000
+
+# Agent
+agentHost: "127.0.0.1"
+agentPort: 29120
+agentConnectTimeout: 3.0

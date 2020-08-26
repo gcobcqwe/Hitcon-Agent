@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="refresh" content="5">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css')}}">
+        <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.3.1.slim.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/popper.min.js')}}"></script>
+        <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.min.js')}}"></script>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/main.css') }}">
+        <title>HITCON 2020</title>
+    </head>
+    <body class="bg">
+        <img src="{{ url_for('static', filename='hitcon-title.png') }}" class="img-fluid mx-auto mb-5 d-block">
+        <!-- <img src="hitcon-title.png" class="img-fluid mx-auto mb-5 d-block">  -->
+        <table class="table">
+            <thead>
+                <th>PlayerName</th>
+                <th>PortUptime</th>
+                <th>PortScore</th>
+                <th>PidUptime</th>
+                <th>PidScore</th>
+                <th>TotalScore</th>
+            </thead>
+            <tbody>
+                {%- for item in status %}
+                    <tr>
+                        <td>{{ item.player_name }}</td>
+                        <td>{{ item.port_uptime }}</td>
+                        <td>{{ item.port_score }}</td>
+                        <td>{{ item.pid_uptime }}</td>
+                        <td>{{ item.pid_score }}</td>
+                        <td>{{ item.total_score }}</td>
+                    </tr>
+                {%- endfor %}
+            </tbody>
+        </table>
+        <footer style="height: 5%">
+            <p style="text-align: center;"><a style="color: white;" href="https://hitcon.org/2020/">HITCON 2020</a></p>
+        </footer>
+    </body>
+</html>
